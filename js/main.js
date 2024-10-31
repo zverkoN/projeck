@@ -1,11 +1,11 @@
 const MOCK_NOTES = [
-//     {
-//     id: 1,
-//     title: 'Работа с формами',
-//     content: 'К определённым полям формы можно обратиться через form.elements по значению, указанному в атрибуте name',
-//     color: 'green',
-//     isFavorite: false,
-// },
+    {
+    id: 1,
+    title: 'Работа с формами',
+    content: 'К определённым полям формы можно обратиться через form.elements по значению, указанному в атрибуте name',
+    color: 'green',
+    isFavorite: false,
+},
 ]
 
 const colors = {
@@ -93,7 +93,7 @@ form.addEventListener('submit', function (event) {
     
     controller.addNote(title, color, content)
 
-if( title.length > 50 )return
+    if( title.length > 50 )return
 
     inputTitle.value = ''
     inputContent.value = ''
@@ -102,10 +102,10 @@ if( title.length > 50 )return
     notesList.addEventListener('click', function(e){
         e.preventDefault()
         const id = e.target.parentNode.parentNode.id
-        
+
         if(e.target.parentNode.className === `delete-btn`){
             controller.deleteNote(id)
-        }
+        } 
 
         if(e.target.parentNode.className === `favorite-btn`){
             controller.toggleIsFavorite(id)
